@@ -23,9 +23,27 @@ map.addLayer(layer);
 
 //Milan
 const firstMilan = [45.4862737, 9.2063373];
-const marker = new L.Marker(firstMilan);
-marker.addTo(map);
-marker.bindPopup('Piazza Luigi di Savoia 1, Milano');
+const streetFirstMilan = 'Piazza Luigi di Savoia, 1 - Milano';
+const secondMilan = [45.5299763, 9.3666279];
+const streetSecondMilan = 'Via Togliatti, 2 - Milano';
+const thirdMilan = [45.284973, 9.111306];
+//Modena
+const firstModena = [44.64763, 10.85401];
+const secondModena = [44.6345866, 10.9552156];
+//Bari
+const firstBari = [41.1080290, 16.8805320];
+const secondBari = [41.126959, 16.87183968931251];
+
+const coords = [firstMilan, secondMilan, thirdMilan, firstModena, secondModena, firstBari, secondBari];
+
+
+coords.forEach((coord, i) => {
+    const marker = new L.Marker(coord, { draggable: true });
+    const src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Stack_Exchange_logo_and_wordmark.svg/375px-Stack_Exchange_logo_and_wordmark.svg.png';
+    const popupContent = document.createElement("div");
+    popupContent.innerHTML = `<img src="${src}" /> <a href="">Google Map Link</a>`;
+    marker.addTo(map).bindPopup(popupContent);
+});
 
 
 
