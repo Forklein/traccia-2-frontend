@@ -3,8 +3,10 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-img {
-    width: 50%;
+.background {
+    height: 200px;
+    width: 200px;
+    background-size: cover;
 }
 
 #map {
