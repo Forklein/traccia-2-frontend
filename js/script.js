@@ -64,6 +64,10 @@ markers.forEach((marker) => {
 });
 
 
+const count = document.querySelector('#count');
+count.innerHTML = 'I marker visualizzati sono: ' + markers.length;
+
+
 
 
 
